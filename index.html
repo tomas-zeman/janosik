@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Divadelní hra Jánošík u lesa Dobšovka 3. - 5. 6. 2022</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@400;600;900&display=swap');
+        html {
+            scroll-behavior: smooth;
+            height: 100%;
+        }
+        body {
+            margin: 0;
+            font-family: 'Roboto Serif', sans-serif;
+            height: 100%;
+        }
+        .header {
+            height: 100vh;
+            width: 100%;
+        }
+        .header__overlay {
+            z-index: 2;
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(243, 243, 243, 0), rgba(243, 243, 243, 1));
+        }
+        .header__heading {
+            font-weight: bold;
+            z-index: 3;
+            padding: 20px;
+            position: absolute;
+        }
+        .header__heading > h1 {
+            font-weight: 900;
+            letter-spacing: 2px;
+            font-size: 90px;
+            margin-top: 30px;
+            color: #02442e;
+            text-shadow: 4px 5px #e6e6d8, 6px 7px #c6a39a;
+        }
+        .header__heading > h2 {
+            background: wheat;
+            padding: 10px;
+        }
+        .header__heading > h3 {
+            font-size: 40px;
+            margin: 0;
+            margin-top: 20px;
+        }
+        .header__main-image {
+            margin: 0 auto;
+            height: 100%;
+            width: 100%;
+        }
+        .header__main-image > img {
+            animation-fill-mode: both;
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+        }
+        .header__navigation {
+            z-index: 4;
+            position: absolute;
+            bottom: -20px;
+            width: calc(100% - 80px);
+            height: 30px;
+            background: #f5dfb3;
+            margin: 20px;
+            padding: 10px 20px;
+            box-shadow: #00000057 2px -4px 10px;
+            border-radius: 15px 15px 0 0;
+            display: flex;
+            font-size: 25px;
+            text-decoration: underline;
+        }
+        .header__navigation > div {
+            padding-right: 20px;
+            display: flex;
+            font-size: 22px;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .nfo__main-image {
+            width: 100%;
+            position: relative;
+        }
+        .nfo__main-image > img {
+            width: 100%;
+        }
+        .nfo__main-image > div {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            padding: 5px;
+            background: wheat;
+        }
+
+        .about__images {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .about__images > div {
+            width: 33%;
+        }
+        .about__images > div > img {
+            width: 100%;
+        }
+        section {
+            width: 100%;
+            margin: 0 auto;
+            max-width: 1200px;
+            font-size: 22px;
+            margin-bottom: 100px;
+            line-height: 1.8em;
+            letter-spacing: 1px;
+        }
+        footer {
+            width: 100%;
+            margin: 0 auto;
+            max-width: 1200px;
+            font-size: 22px;
+            margin-bottom: 20px;
+            line-height: 1.8em;
+            letter-spacing: 1px;
+        }
+        .active {
+            font-weight: bold;
+        }
+        h4 {
+            text-transform: uppercase;
+        }
+        h4 {
+            font-size: 26px;
+        }
+        .fixed-navigation__navigation {
+            position: fixed;
+            top: 0;
+            z-index: 4;
+            width: calc(100% - 80px);
+            height: 30px;
+            background: #f5dfb3;
+            margin: 20px;
+            padding: 10px 20px;
+            box-shadow: #00000057 2px -4px 10px;
+            border-radius: 15px;
+            display: flex;
+            font-size: 25px;
+            visibility:hidden;
+            opacity:0;
+            transition:visibility 0.3s linear,opacity 0.3s linear;
+        }
+        .fixed-navigation__navigation.visible {
+            visibility:visible;
+            opacity:1;
+            transition:visibility 0.3s linear,opacity 0.3s linear;
+        }
+        .fixed-navigation__logo-wrapper {
+            justify-content: end;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #02442e;
+            text-decoration: none;
+            text-shadow: 1px 2px #e6e6d8, 2px 3px #c6a39a;
+            align-items: center;
+        }
+        .fixed-navigation__navigation section {
+            letter-spacing: 0;
+            display: flex;
+            margin: 0;
+        }
+        .fixed-navigation__navigation div {
+            padding-right: 20px;
+            display: flex;
+            font-size: 22px;
+            align-items: center;
+            justify-content: center;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="section header" id="header">
+        <div class="header__overlay"></div>
+        <div class="header__heading">
+            <h3>Divadelní hra</h3>
+            <h1>Jánošík <br>u lesa<br> Dobšovka</h1>
+            <h2>5. a 6. 6. 2022 ve Spáleném Poříčí</h2>
+        </div>
+        <div class="header__main-image">
+
+            <img src="3.jpeg">
+
+        </div>
+
+        <nav class="header__navigation">
+            <div data-ref="header">Úvod</div>
+            <div data-ref="about">O hře</div>
+            <div data-ref="nfo">Informace</div>
+            <div data-ref="tickets">Vstupenky</div>
+        </nav>
+
+    </header>
+
+    <section class="about section" id="about">
+
+        <div class="about__description">
+            <h4>O hře</h4>
+            <p>Ve dnech 3. – 5.června 2022 přesně po 100 letech se uskuteční divadelní představení Jánošík u lesa Dobšovka.</p>
+            <div class="about__images">
+                <div>
+                    <img src="2.jpeg" alt="dobová fotografie">
+                </div>
+                <div>
+                    <img src="3.jpeg" alt="dobová fotografie">
+                </div>
+                <div>
+                    <img src="4.jpeg" alt="dobová fotografie">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="nfo section" id="nfo">
+
+        <div class="nfo__description">
+            <h4>Informace</h4>
+            <p>Hra bude odehrána 3.6. - 5.6.2022 od 20.30 na louce u obce Lipnice a ze Spáleného Poříčí bude zajištěna kyvadlová autobusová doprava z vyhrazeného parkoviště v areálu Hotelu Brdy na místo divadelního představení a po představení zpět. Pro diváky z Plzně budou po představení vypraveny autobusy přímo do Plzně na Hlavní nádraží.</p>
+            <p>Naši předkové představení odehráli pro velký úspěch dokonce dvakrát - 4. a 5. června 1922 a výtěžek z něj 11 094, 46 Kč byl věnován na výstavbu pomníku padlých na náměstí.  Tato myšlenka se zalíbila panu Michalu Zemanovi, provozovateli hotelu Brdy, a rozhodl se znovu po 100 letech divadlo uspořádat. Rezervujte si tedy některý z víkendových večerů!</p>
+            <div class="nfo__main-image">
+                <img src="kronika.png" alt="Záznam z dobové kroniky">
+                <div>Záznam z dobové kroniky</div>
+            </div>
+            <p>
+                <strong>Další zajímavosti a technické informace budou zveřejňovány postupně</strong>
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="tickets section" id="tickets">
+
+        <div class="tickets__description">
+            <h4>Vstupenky</h4>
+            <p>
+                Vstupenky budou k dispozici na portálu Plzeňská vstupenka.
+            </p>
+            <p>
+                <strong>Odkaz na prodej vstupenek bude přidán po zahájení prodeje (březen 2022)</strong>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <div>
+            <div>
+                <a href="mailto:info@janosikulesa.cz">info@janosikulesa.cz</a>
+            </div>
+            <div style="height: 400px">
+                Fotografie z archivu města Spálené Poříčí
+            </div>
+        </div>
+
+    </footer>
+
+    <nav class="fixed-navigation__navigation">
+        <section>
+            <div data-ref="header">Úvod</div>
+            <div data-ref="about">O hře</div>
+            <div data-ref="nfo">Informace</div>
+            <div data-ref="tickets">Vstupenky</div>
+        </section>
+        <section class="fixed-navigation__logo-wrapper">Jánošík u lesa Dobšovka</section>
+    </nav>
+
+    <script lang="js">
+        "use strict";
+        var sections = document.querySelectorAll('.section');
+        var config = {
+            rootMargin: '0px 0px -80% 0px'
+        };
+        var observer = new IntersectionObserver(function (a, b) {
+            a.forEach(function (a) {
+                void 0, a.isIntersecting && intersectionHandler(a);
+            });
+        }, config);
+        void 0, sections.forEach(function (a) {
+            var b = document.querySelectorAll('div[data-ref=' + a.id + ']');
+            void 0, b.forEach(function (b) {
+                b.addEventListener('click', function () {
+                    var b = document.querySelector("#" + a.id);
+                    void 0, window.scrollTo({
+                        top: b.offsetTop - 105 < 0 ? 0 : b.offsetTop - 105
+                    });
+                });
+            }), observer.observe(a);
+        });
+        function intersectionHandler(a) {
+            var b = a.target.id;
+            var c = document.querySelectorAll('div.active');
+            var d = document.querySelector('.fixed-navigation__navigation');
+            var e = document.querySelectorAll('div[data-ref=' + b + ']');
+            var f = b === 'header';
+            c && c.forEach(function (a) {
+                void 0, a.classList.remove('active');
+            }), e && e.forEach(function (a) {
+                void 0, a.classList.add('active');
+            }), f ? d.classList.remove('visible') : d.classList.add('visible');
+        }
+    </script>
+
+</body>
+</html>
